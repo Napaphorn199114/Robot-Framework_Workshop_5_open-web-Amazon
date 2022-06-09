@@ -10,8 +10,8 @@ Test Case
 
 3. Click Menu "Amazon Music"
   
-  3.1 Click Menu "Amazon Music Unlimited"
+    3.1 Click Menu "Amazon Music Unlimited"
   
-  3.2 Click Menu "Free Streaming Music"
+    3.2 Click Menu "Free Streaming Music"
   
-  3.3 Click Menu "Podcasts"
+    3.3 Click Menu "Podcasts"
