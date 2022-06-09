@@ -2,7 +2,7 @@
 
 Library    Selenium2Library , BuiltIn
 
-Test Case
+Test Cases
 
 1. Open Browser Amazon.com 
 
