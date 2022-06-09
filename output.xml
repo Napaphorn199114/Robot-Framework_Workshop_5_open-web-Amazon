@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220609 15:56:45.654" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon" source="D:\Advance_Robot_Python\Robot Framework_Workshop_5_open web Amazon click for loop\amazon.robot">
+<test id="s1-t1" name="1.Open Website" line="8">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://www.amazon.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220609 15:56:45.853" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20220609 15:56:45.853" endtime="20220609 15:56:52.160"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220609 15:56:52.161" endtime="20220609 15:56:52.162"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220609 15:56:52.162" endtime="20220609 15:56:52.864"/>
+</kw>
+<status status="PASS" starttime="20220609 15:56:45.852" endtime="20220609 15:56:52.865"/>
+</test>
+<test id="s1-t2" name="2.FOR IN ENUMERATE" line="13">
+<kw name="Create List" library="BuiltIn">
+<var>@{ITEMS}</var>
+<arg>Amazon Music Unlimited</arg>
+<arg>Free Streaming Music</arg>
+<arg>Podcasts</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220609 15:56:52.867" level="INFO">@{ITEMS} = [ Amazon Music Unlimited | Free Streaming Music | Podcasts ]</msg>
+<status status="PASS" starttime="20220609 15:56:52.866" endtime="20220609 15:56:52.867"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<var>${INDEX}</var>
+<var>${ELEMENT}</var>
+<value>@{ITEMS}</value>
+<iter>
+<var name="${INDEX}">0</var>
+<var name="${ELEMENT}">Amazon Music Unlimited</var>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220609 15:56:52.868" endtime="20220609 15:56:53.190"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:56:53.192" level="INFO">Clicking element '//span[@class="hm-icon-label"][text()="All"]'.</msg>
+<status status="PASS" starttime="20220609 15:56:53.190" endtime="20220609 15:56:54.875"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:56:54.875" level="INFO">Clicking element 'css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20220609 15:56:54.875" endtime="20220609 15:56:55.693"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ELEMENT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220609 15:56:55.693" endtime="20220609 15:56:55.695"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//a[text()="${ELEMENT}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:56:55.696" level="INFO">Clicking element '//a[text()="Amazon Music Unlimited"]'.</msg>
+<status status="PASS" starttime="20220609 15:56:55.695" endtime="20220609 15:56:57.432"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="Selenium2Library">
+<arg>//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220609 15:56:57.960" level="INFO">Current page does not contain element '//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]'.</msg>
+<status status="PASS" starttime="20220609 15:56:57.432" endtime="20220609 15:56:57.960"/>
+</kw>
+<status status="PASS" starttime="20220609 15:56:52.868" endtime="20220609 15:56:57.960"/>
+</iter>
+<iter>
+<var name="${INDEX}">1</var>
+<var name="${ELEMENT}">Free Streaming Music</var>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220609 15:56:57.961" endtime="20220609 15:56:58.365"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:56:58.366" level="INFO">Clicking element '//span[@class="hm-icon-label"][text()="All"]'.</msg>
+<status status="PASS" starttime="20220609 15:56:58.365" endtime="20220609 15:57:02.530"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:57:02.530" level="INFO">Clicking element 'css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20220609 15:57:02.530" endtime="20220609 15:57:03.227"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ELEMENT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220609 15:57:03.227" endtime="20220609 15:57:03.227"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//a[text()="${ELEMENT}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:57:03.228" level="INFO">Clicking element '//a[text()="Free Streaming Music"]'.</msg>
+<status status="PASS" starttime="20220609 15:57:03.227" endtime="20220609 15:57:04.507"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="Selenium2Library">
+<arg>//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220609 15:57:04.926" level="INFO">Current page does not contain element '//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]'.</msg>
+<status status="PASS" starttime="20220609 15:57:04.507" endtime="20220609 15:57:04.926"/>
+</kw>
+<status status="PASS" starttime="20220609 15:56:57.961" endtime="20220609 15:57:04.926"/>
+</iter>
+<iter>
+<var name="${INDEX}">2</var>
+<var name="${ELEMENT}">Podcasts</var>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220609 15:57:04.926" endtime="20220609 15:57:05.235"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//span[@class="hm-icon-label"][text()="All"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:57:05.236" level="INFO">Clicking element '//span[@class="hm-icon-label"][text()="All"]'.</msg>
+<status status="PASS" starttime="20220609 15:57:05.235" endtime="20220609 15:57:05.907"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:57:05.910" level="INFO">Clicking element 'css=#hmenu-content &gt; ul.hmenu.hmenu-visible &gt; li:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20220609 15:57:05.909" endtime="20220609 15:57:08.950"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ELEMENT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220609 15:57:08.950" endtime="20220609 15:57:08.951"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//a[text()="${ELEMENT}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220609 15:57:08.951" level="INFO">Clicking element '//a[text()="Podcasts"]'.</msg>
+<status status="PASS" starttime="20220609 15:57:08.951" endtime="20220609 15:57:12.369"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="Selenium2Library">
+<arg>//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220609 15:57:12.692" level="INFO">Current page does not contain element '//body[@class="a-m-us a-aui_152852-t1 a-aui_157141-t1 a-aui_158613-t1 a-aui_160684-t1 a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_tnr_v2_180836-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_145937-c a-aui_ux_60000-c a-meter-animate"]'.</msg>
+<status status="PASS" starttime="20220609 15:57:12.369" endtime="20220609 15:57:12.692"/>
+</kw>
+<status status="PASS" starttime="20220609 15:57:04.926" endtime="20220609 15:57:12.692"/>
+</iter>
+<status status="PASS" starttime="20220609 15:56:52.868" endtime="20220609 15:57:12.692"/>
+</for>
+<status status="PASS" starttime="20220609 15:56:52.866" endtime="20220609 15:57:12.693"/>
+</test>
+<status status="PASS" starttime="20220609 15:56:45.655" endtime="20220609 15:57:12.697"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
