@@ -15,3 +15,8 @@ Test Cases
     3.2 Click Menu "Free Streaming Music"
   
     3.3 Click Menu "Podcasts"
+
+
+Run Program with VS Code
+
+amazon.robot
